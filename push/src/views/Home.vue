@@ -1,11 +1,11 @@
 <template>
   <div class="flex flex-col h-full">
-    <customHeader title="Task List"/>
+    <customHeader :currentPane=0 title="Task List"/>
     <div class="h-full m-4 bg-blue-light overflow-y-auto">
         <div class="flex items-center p-3 bg-gray">
             <div @click="dropdown = !dropdown">{{currentMessage}}</div>
             <i @click="dropdown = !dropdown" class="fas fa-caret-down pl-2"></i>
-            <div v-if="dropdown" class="absolute bg-gray-200 left-0 mt-52 w-80 py-2">
+            <div v-if="dropdown" class="absolute bg-gray-200 w-full left-0 mt-52 w-80 py-2">
                 <div @click="changeView(-1)" :class="[{'bg-gray-300': currentIndex == -1}, 'text-left px-2']">&#8226; My Upcoming Tasks</div>
                 <div class="border-2 border-blue m-1">Or Follow Up On:</div>
                 <div @click="changeView(index)" v-for="(partner, index) in partners" :key="index" :class="[{'bg-gray-300': currentIndex == index}, 'text-left px-2']">
@@ -43,9 +43,9 @@
 </template>
 
 <script>
+import moment from 'moment';
 import fab from "@/components/fab.vue";
 import customHeader from "@/components/header.vue";
-import moment from 'moment'
 export default {
   name: "Home",
   components: {
@@ -56,42 +56,6 @@ export default {
       return {
           dropdown: false,
           currentMessage: "My Upcoming Tasks",
-          partners: ['Zacharie Johnson', 'Jordan Chipman', 'Katie Cooper', 'Karli Stichter'],
-          tasks: {
-              'Zacharie Johnson': [
-                  {
-                      title: 'Read Scriptures',
-                      beginDate: '',
-                      endDate: moment("4/11/21"),
-                      partner: 'Cara Johnson',
-                      frequency: '',
-                      reminderTime: '',
-                      rewardMessage: '',
-                      rewardType: 0,
-                      rewardRecognizeLeft: 4,
-                      completed: false,
-                      recognized: false
-                  },
-                  {
-                      title: 'Do Taxes',
-                      endDate: moment(),
-                      completed: true,
-                      recognized: false,
-                  },
-                  {
-                      title: 'Read Scriptures',
-                      endDate: moment(),
-                      completed: false,
-                      recognized: false,
-                  },
-                  {
-                      title: 'Read Scriptures',
-                      endDate: moment("4/9/21"),
-                      completed: false,
-                      recognized: false,
-                  }
-              ]
-          },
           currentIndex: -1
       }
   },

@@ -1,12 +1,27 @@
 <template>
-  <div class="absolute bottom-0 right-0 text-6xl cursor-pointer m-4 bg-white rounded-full customPadding">
-    +
+  <div>
+    <div @click="showAddGoal = true" class="absolute bottom-0 right-0 text-6xl cursor-pointer m-4 bg-white rounded-full customPadding">
+      +
+    </div>
+    <addGoal v-if="showAddGoal" @close="showAddGoal = false"/>
   </div>
 </template>
 
 <script>
+import addGoal from '@/components/addGoal.vue';
 export default {
   name: "fab",
+  components: {
+    addGoal
+  },
+  data: function() {
+    return {
+      showAddGoal: false
+    }
+  },
+  methods: {
+    
+  }
 };
 </script>
 
