@@ -20,7 +20,7 @@
                 <div v-for="(tasks, date) in overdue" :key="date">
                     <div class="bg-yellow font-bold text-red-900 pl-3 py-1 text-left">{{date}}</div>
                     <div v-for="(task, index) in tasks" :key="index" class="flex items-center justify-between cursor-pointer py-1 px-4 border-b border-blue">
-                        {{task.title}}
+                        <div>{{task.endDate.format("hh:mm")}} {{task.title}}</div>
                         <i @click="task.completed = true" v-if="!task.completed" class="far fa-check-circle"></i>
                         <i @click="task.completed = false" v-else class="fas fa-check-circle blue"></i>
                     </div>

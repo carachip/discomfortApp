@@ -1,5 +1,5 @@
 <template>
-  <div v-clickoutside="closed" class="absolute h-full left-0 top-0 bg-yellow w-64">
+  <div v-clickoutside="closed" class="absolute h-full z-10 left-0 top-0 bg-yellow w-64">
     <div class="flex flex-col items-start justify-center w-full h-32 pl-4 bg-gray">
         <div>Cara Johnson</div><div>@carachips</div>
     </div>
