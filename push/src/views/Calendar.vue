@@ -2,7 +2,7 @@
   <div class="flex flex-col h-full">
     <customHeader :currentPane=1 title="Calendar View"/>
     <div class="h-full m-4 bg-blue-light overflow-y-auto">
-      <vc-calendar :attributes='attributes' is-dark/>
+      <vc-calendar :attributes='attributes' class="mt-4" is-dark/>
     </div>
     <fab/>
   </div>
@@ -27,10 +27,6 @@ export default {
           dot: {
             color: todo.color,
             class: todo.isComplete ? 'opacity-75' : '',
-          },
-          popover: {
-            label: todo.description,
-            visibility: 'click'
           },
           customData: todo,
         })),

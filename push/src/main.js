@@ -14,3 +14,14 @@ new Vue({
   router,
   render: (h) => h(App),
 }).$mount("#app");
+
+
+//TODO
+/**
+ * addGoal: help popup or icon
+ * calendar functionality, also adding the Home stuff to the bottom
+ * add more dummy data
+ * app settings
+ * be able to delete partners
+ * 
+ */

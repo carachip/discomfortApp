@@ -13,9 +13,9 @@
         </div>
         <div>
             <div class="font-bold">My Current Partners</div>
-            <div class="flex flex-col items-start pl-4">
-                <div v-for="(partner, index) in partners" :key="index">
-                    {{partner}}
+            <div class="flex flex-col items-start px-4">
+                <div @click="deletePartner(partner)" v-for="(partner, index) in partners" :key="index" class="flex items-center justify-between w-full">
+                    {{partner}}<i class="fas fa-times cursor-pointer"></i>
                 </div>
             </div>
 
@@ -49,6 +49,9 @@ export default {
           this.search = "";
           this.tasks[partner] = [];
           this.partners.push(partner);
+      },
+      deletePartner: function(partner) {
+        this.partners.splice(this.partners.indexOf(partner), 1);
       }
   }
 };
