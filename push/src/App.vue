@@ -65,6 +65,17 @@
   background-color: #d9b459;
   cursor: pointer;
 }
+
+.button-blue {
+  
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  border-radius: 1.5rem;
+  background-color: #4c736e;
+  cursor: pointer;
+}
 input {
   padding-left: .5rem;
 }

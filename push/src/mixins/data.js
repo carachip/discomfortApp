@@ -29,7 +29,7 @@ export default {
         return {
             todos,
             partners: ['Zacharie Johnson', 'Jordan Chipman', 'Katie Cooper', 'Karli Stichter'],
-            streak: {'Zacharie Johnson': '4/40', 'Jordan Chipman': '2/4', 'Katie Cooper': '5/32', 'Karli Stichter': '0/20'},
+            streak: {'Zacharie Johnson': '4/40', 'Jordan Chipman': '4/4', 'Katie Cooper': '31/32', 'Karli Stichter': '0/20'},
             searchList: ['Ashley Williams', 'Bethany Smith', 'Charlotte Cooper' , 'Derek Williams', 'Emily Machado','Pipen Williams', 'Jeremie Johnson', 'Jake Cooper'],
             tasks: {
                 'Cara Johnson': [
@@ -40,6 +40,7 @@ export default {
                         completed: false,
                         confirmed: false,
                         partner: "Katie Cooper",
+                        rewardMsg: "Tucanos!"
                     },
                     {
                         id: 1,
@@ -56,6 +57,7 @@ export default {
                         completed: false,
                         confirmed: false,
                         partner: "Katie Cooper",
+                        rewardMsg: "Tucanos!"
                     },
                     {
                         id: 3,
@@ -64,6 +66,7 @@ export default {
                         completed: false,
                         confirmed: false,
                         partner: "Katie Cooper",
+                        rewardMsg: "Tucanos!"
                     },
                     {
                         id: 4,
@@ -96,6 +99,7 @@ export default {
                         completed: false,
                         confirmed: false,
                         partner: "Katie Cooper",
+                        rewardMsg: "Tucanos!"
                     },
                     {
                         id: 8,
@@ -112,6 +116,7 @@ export default {
                         completed: false,
                         confirmed: false,
                         partner: "Katie Cooper",
+                        rewardMsg: "Tucanos!"
                     }
                 ],
                 'Zacharie Johnson': [
@@ -119,7 +124,7 @@ export default {
                       id: 0,
                       title: 'Read Scriptures',
                       beginDate: '',
-                      endDate: moment("4/11/21 8:00:00"),
+                      endDate: moment().hour(8).minutes(0).subtract(1, 'days'),
                       partner: 'Cara Johnson',
                       frequency: '',
                       reminderTime: '',
@@ -132,7 +137,7 @@ export default {
                   {
                       id: 1,
                       title: 'Do Taxes',
-                      endDate: moment(),
+                      endDate: moment().hour(8).minutes(0),
                       completed: true,
                       confirmed: false,
                       partner: 'Cara Johnson'
@@ -140,7 +145,7 @@ export default {
                   {
                       id: 2,
                       title: 'Read Scriptures',
-                      endDate: moment(),
+                      endDate: moment().hour(8).minutes(0).add(3, 'days'),
                       completed: false,
                       confirmed: false,
                       partner: 'Cara Johnson'
@@ -148,7 +153,7 @@ export default {
                   {
                       id: 3,
                       title: 'Read Scriptures',
-                      endDate: moment("4/9/21 8:00:00"),
+                      endDate: moment().hour(8).minutes(0).add(4, 'days'),
                       completed: false,
                       confirmed: false,
                       partner: 'Cara Johnson'
@@ -159,7 +164,7 @@ export default {
                     id: 0,
                     title: 'Read Scriptures',
                     beginDate: '',
-                    endDate: moment("4/11/21 8:00:00"),
+                    endDate: moment().hour(8).minutes(0).subtract(1, 'days'),
                     partner: 'Cara Johnson',
                     frequency: '',
                     reminderTime: '',
@@ -188,7 +193,7 @@ export default {
                 {
                     id: 3,
                     title: 'Read Scriptures',
-                    endDate: moment("4/9/21 8:00:00"),
+                    endDate: moment().hour(18).minutes(0).add(2, 'days'),
                     completed: false,
                     confirmed: false,
                     partner: 'Cara Johnson'
@@ -199,7 +204,7 @@ export default {
                   id: 0,
                   title: 'Read Scriptures',
                   beginDate: '',
-                  endDate: moment("4/11/21 8:00:00"),
+                  endDate: moment().hour(8).minutes(0).subtract(1, 'days'),
                   partner: 'Cara Johnson',
                   frequency: '',
                   reminderTime: '',
@@ -207,7 +212,8 @@ export default {
                   rewardType: 0,
                   rewardRecognizeLeft: 4,
                   completed: false,
-                  confirmed: false
+                  confirmed: false,
+                  rewardMsg: "Tucanos!"
               },
               {
                   id: 1,
@@ -215,7 +221,8 @@ export default {
                   endDate: moment(),
                   completed: true,
                   confirmed: false,
-                  partner: 'Cara Johnson'
+                  partner: 'Cara Johnson',
+                  rewardMsg: "Tucanos!"
               },
               {
                   id: 2,
@@ -223,15 +230,17 @@ export default {
                   endDate: moment(),
                   completed: false,
                   confirmed: false,
-                  partner: 'Cara Johnson'
+                  partner: 'Cara Johnson',
+                  rewardMsg: "Tucanos!"
               },
               {
                   id: 3,
                   title: 'Read Scriptures',
-                  endDate: moment("4/9/21 8:00:00"),
+                  endDate: moment().hour(8).minutes(0).add(1, 'days'),
                   completed: false,
                   confirmed: false,
-                  partner: 'Cara Johnson'
+                  partner: 'Cara Johnson',
+                  rewardMsg: "Tucanos!"
               }
             ],
             'Karli Stichter': [

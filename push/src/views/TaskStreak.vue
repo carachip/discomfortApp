@@ -5,6 +5,7 @@
       <div v-for="partner in partners" :key="partner" class="flex flex-col items-baseline" >
         <div class="font-bold bg-gray w-full">{{partner}}</div>
         <div class="font-bold">Current streak: {{streak[partner]}}</div>
+        <div v-if="partner == 'Jordan Chipman'" class="blue font-bold">Goal Achieved!: Get sushi!</div>
         <div class="font-bold">My Tasks:</div>
         <div v-for="(task, index) in individualTasks[partner].me" :key="partner + index + task + 0">{{task}}</div>
         <div class="font-bold">Their Tasks:</div>

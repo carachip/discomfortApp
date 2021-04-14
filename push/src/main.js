@@ -3,8 +3,11 @@ import App from "./App.vue";
 import router from "./router";
 import data from './mixins/data';
 import VCalendar from 'v-calendar';
+import VueConfetti from 'vue-confetti'
 
 Vue.mixin(data); 
+
+Vue.use(VueConfetti);
 Vue.use(VCalendar, {
   componentPrefix: 'vc',  // Use <vc-calendar /> instead of <v-calendar />
 });

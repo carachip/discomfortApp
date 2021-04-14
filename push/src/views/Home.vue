@@ -21,16 +21,16 @@
                 <div v-for="(tasks, date) in overdue" :key="date">
                     <div class="bg-yellow font-bold text-red-900 pl-3 py-1 text-left">{{date}}</div>
                     <div v-for="(task, index) in tasks" :key="index" class="flex flex-col py-1 px-3 border-b border-blue">
-                        <div class="flex items-center justify-between cursor-pointer">
+                        <div class="flex items-center justify-between cursor-pointer h-8">
                             <div><span class="italic">{{task.endDate.format("h:mm a")}}</span> - {{task.title}}</div>
                             <div v-if="currentIndex == -1">
                                 <i @click="completeTask(task)" v-if="!task.completed" class="far fa-check-circle"></i>
                                 <i @click="task.completed = false" v-else class="fas fa-check-circle blue"></i>
                             </div>
                             <div v-else>
-                                <div v-if="task.confirmed" @click="confirmTask(task, false)">Confirmed!</div>
-                                <div v-else-if="!task.completed" class="text-xs border border-blue rounded">Remind!</div>
-                                <div v-else @click="confirmTask(task, true)" class="w-20 text-xs border border-blue rounded">Confirm Complete!</div>
+                                <div v-if="task.confirmed" @click="confirmTask(task, false)" class="h-8 flex items-center text-xs px-1 text-white border border-blue rounded bg-blue">Confirmed!</div>
+                                <div v-else-if="!task.completed" class="text-xs border border-blue rounded px-2 h-8 flex items-center">Remind!</div>
+                                <div v-else @click="confirmTask(task, true)" class="h-8 flex items-center w-20 text-xs border border-blue rounded">Confirm Complete!</div>
                             </div>
                         </div>
                         <div v-if="currentIndex == -1" class="flex flex-col text-sm blue items-start">
@@ -44,16 +44,16 @@
             <div v-for="(tasks, date) in upcoming" :key="date">
                 <div class="bg-yellow font-bold pl-3 py-1 text-left">{{date}}</div>
                 <div v-for="(task, index) in tasks" :key="index" class="flex flex-col py-1 px-3 border-b border-blue">
-                    <div class="flex items-center justify-between cursor-pointer">
+                    <div class="flex items-center justify-between cursor-pointer h-8">
                         <div><span class="italic">{{task.endDate.format("h:mm a")}}</span> - {{task.title}}</div>
                         <div v-if="currentIndex == -1">
                             <i @click="completeTask(task)" v-if="!task.completed" class="far fa-check-circle"></i>
                             <i @click="task.completed = false" v-else class="fas fa-check-circle blue"></i>
                         </div>
                         <div v-else>
-                            <div v-if="task.confirmed" @click="confirmTask(task, false)" class="text-xs px-1 text-white border border-blue rounded bg-blue" >Confirmed!</div>
+                            <div v-if="task.confirmed" @click="confirmTask(task, false)" class="h-8 flex items-center text-xs px-1 text-white border border-blue rounded bg-blue" >Confirmed!</div>
                             <div v-else-if="!task.completed" class="text-xs rounded italic">In progress</div>
-                            <div v-else @click="confirmTask(task, true)" class="w-16 text-xs border border-blue rounded">Confirm Complete!</div>
+                            <div v-else @click="confirmTask(task, true)" class="h-8 flex items-center  w-16 text-xs border border-blue rounded">Confirm Complete!</div>
                         </div>
                     </div>
                     <div v-if="currentIndex == -1" class="flex flex-col text-sm blue items-start">
@@ -73,6 +73,13 @@
                 <div>Your partner will be notified!</div>
             </div>
             <div @click="completeDialog = false" class="button">Ok</div>
+        </div>
+    </transition>
+    <transition>
+        <div v-if="goalAchieved" class="flex flex-col w-3/4 ml-10 mt-10 p-4 text-white bg-yellow border-blue border-2 absolute">
+            <div>Congratulations! You've met your goal!</div>
+            <div>Your reward is: <span class="font-bold">{{rewardMsg}}</span></div>
+            <div @click="goalAchieved = false" class="button-blue mt-2">Yippee!!</div>
         </div>
     </transition>
     <fab/>
@@ -95,7 +102,9 @@ export default {
           currentMessage: "My Tasks",
           currentIndex: -1,
           completeDialog: false,
-          completedTask: null
+          completedTask: null,
+          goalAchieved: false,
+          rewardMsg: ""
       }
   },
   computed: {
@@ -193,6 +202,12 @@ export default {
                 let halves = this.streak[person].split('/');
                 let newStreak = String(parseInt(halves[0]) + num);
                 this.$set(this.streak, person, newStreak + "/" + halves[1]);
+                if (newStreak == halves[1]) {
+                    this.goalAchieved = true;
+                    this.rewardMsg = task.rewardMsg;
+                    this.$confetti.start();
+                    setTimeout(() => this.$confetti.stop(), 4000);
+                }
                 break;
             }
         }
