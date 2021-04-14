@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import LoginView from "../views/LoginView.vue";
 import Home from "../views/Home.vue";
-import Calendar from "../views/Calendar.vue";
+import TaskStreak from "../views/TaskStreak.vue";
 import FindPartners from "../views/FindPartners.vue";
 import Settings from "../views/Settings.vue";
 
@@ -20,9 +20,9 @@ const routes = [
     component: Home,
   },
   {
-    path: "/Calendar",
-    name: "Calendar",
-    component: Calendar,
+    path: "/TaskStreak",
+    name: "TaskStreak",
+    component: TaskStreak,
   },
   {
     path: "/FindPartners",

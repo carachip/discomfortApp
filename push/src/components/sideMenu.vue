@@ -5,7 +5,7 @@
     </div>
     <div class="flex flex-col p-4">
         <router-link to="/home" :class="[{'bg-gray': currentPane == 0}, 'flex items-center py-1 px-2 m-1']"><i class="fas fa-tasks pr-2"></i><div>Task List</div></router-link>
-        <router-link to="/calendar" :class="[{'bg-gray': currentPane == 1}, 'flex items-center py-1 px-2 m-1']"><i class="far fa-calendar-check pr-2"></i><div>Calendar View</div></router-link>
+        <router-link to="/TaskStreak" :class="[{'bg-gray': currentPane == 1}, 'flex items-center py-1 px-2 m-1']"><i class="far fa-calendar-check pr-2"></i><div>Task Streak</div></router-link>
         <router-link to="/findPartners" :class="[{'bg-gray': currentPane == 2}, 'flex items-center py-1 px-2 m-1']"><i class="fas fa-user-friends pr-2"></i><div>Find Partners</div></router-link>
         <div class="border-b-2 border-gray"></div>
         <router-link to="/settings" :class="[{'bg-gray': currentPane == 3}, 'flex items-center py-1 px-2 m-1']"><i class="fas fa-cog pr-2"></i><div>App Settings</div></router-link>
