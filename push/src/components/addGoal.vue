@@ -10,14 +10,14 @@
         </div>
         <div class="flex justify-between h-full">
             <div class="p-3 overflow-y-auto w-full">
+                <div class="flex py-1 whitespace-nowrap items-center">Partner
+                    <select v-model="chosenPartner" class="ml-2 w-full">
+                        <option v-for="partner in partners" :key="partner">{{partner}}</option>
+                    </select>
+                </div>
                 <div class="flex font-bold"><input @click="checkGoalType(0)" type="checkbox" id="goal0" class="mr-1"/>Goal Info</div>
                 <div v-if="newGoalType == 0">
                     <div class="flex py-1 whitespace-nowrap items-center">Title<input v-model="title" class="w-full ml-2"/></div>
-                    <div class="flex py-1 whitespace-nowrap items-center">Partner
-                        <select v-model="chosenPartner" class="ml-2">
-                            <option v-for="partner in partners" :key="partner">{{partner}}</option>
-                        </select>
-                    </div>
                     <div class="flex py-1 whitespace-nowrap items-center">
                         <div class="mr-2">Starts</div>
                         <vc-date-picker v-model="date" mode="dateTime">
@@ -141,8 +141,9 @@ export default {
           this.$set(this.weekdays, index,  !this.weekdays[index]);
       },
       validateAndSave: function() {
-          if ( (this.newGoalType == -1 ) ||
-                (this.newGoalType == 0 && (this.title == "" || this.chosenPartner == "" || (this.reminder && this.reminderFreq == "") || (this.repeat && this.repeatFreq == "")) ) ||
+          if ( this.chosenPartner == "" ||
+                (this.newGoalType == -1 ) ||
+                (this.newGoalType == 0 && (this.title == "" || (this.reminder && this.reminderFreq == "") || (this.repeat && this.repeatFreq == "")) ) ||
                 (this.newGoalType == 1 && this.rewardMsg == "")) {
               this.errors = true;    
           }

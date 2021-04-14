@@ -28,9 +28,9 @@ export default {
           ];
         return {
             todos,
-            partners: ['Zacharie Johnson', 'Jordan Chipman', 'Katie Cooper', 'Karli Stichter'],
-            streak: {'Zacharie Johnson': '4/40', 'Jordan Chipman': '4/4', 'Katie Cooper': '31/32', 'Karli Stichter': '0/20'},
-            searchList: ['Ashley Williams', 'Bethany Smith', 'Charlotte Cooper' , 'Derek Williams', 'Emily Machado','Pipen Williams', 'Jeremie Johnson', 'Jake Cooper'],
+            partners: ['Zacharie Johnson', 'Jordan Chipman', 'Katie Cooper', 'Pippen Pipchipiams'],
+            streak: {'Zacharie Johnson': '4/40', 'Jordan Chipman': '4/4', 'Katie Cooper': '31/32', 'Pippen Pipchipiams': '5/20'},
+            searchList: ['Ashley Williams', 'Bethany Smith', 'Charlotte Cooper' , 'Derek Williams', 'Emily Machado','Pippen Pipchipiams', 'Jeremie Johnson', 'Jake Cooper'],
             tasks: {
                 'Cara Johnson': [
                     {
@@ -117,7 +117,29 @@ export default {
                         confirmed: false,
                         partner: "Katie Cooper",
                         rewardMsg: "Tucanos!"
-                    }
+                    },
+                    {
+                        id: 0,
+                        title: 'Feed the cat',
+                        beginDate: '',
+                        endDate: moment("4/11/21 8:00:00"),
+                        partner: 'Pippen Pipchipiams',
+                        frequency: '',
+                        reminderTime: '',
+                        rewardMessage: '',
+                        rewardType: 0,
+                        rewardRecognizeLeft: 4,
+                        completed: false,
+                        confirmed: false
+                    },
+                    {
+                        id: 1,
+                        title: 'Give me treats',
+                        endDate: moment(),
+                        completed: true,
+                        confirmed: false,
+                        partner: 'Pippen Pipchipiams'
+                    },
                 ],
                 'Zacharie Johnson': [
                   {
@@ -162,7 +184,7 @@ export default {
               'Jordan Chipman': [
                 {
                     id: 0,
-                    title: 'Read Scriptures',
+                    title: 'Board games',
                     beginDate: '',
                     endDate: moment().hour(8).minutes(0).subtract(1, 'days'),
                     partner: 'Cara Johnson',
@@ -176,7 +198,7 @@ export default {
                 },
                 {
                     id: 1,
-                    title: 'Do Taxes',
+                    title: 'Watch anime',
                     endDate: moment(),
                     completed: true,
                     confirmed: false,
@@ -184,7 +206,7 @@ export default {
                 },
                 {
                     id: 2,
-                    title: 'Read Scriptures',
+                    title: 'Workout - Pickleball',
                     endDate: moment(),
                     completed: false,
                     confirmed: false,
@@ -192,7 +214,7 @@ export default {
                 },
                 {
                     id: 3,
-                    title: 'Read Scriptures',
+                    title: 'Workout - Pickleball',
                     endDate: moment().hour(18).minutes(0).add(2, 'days'),
                     completed: false,
                     confirmed: false,
@@ -217,8 +239,8 @@ export default {
               },
               {
                   id: 1,
-                  title: 'Do Taxes',
-                  endDate: moment(),
+                  title: 'Vacuum',
+                  endDate: moment().hour(12).minutes(0),
                   completed: true,
                   confirmed: false,
                   partner: 'Cara Johnson',
@@ -243,32 +265,10 @@ export default {
                   rewardMsg: "Tucanos!"
               }
             ],
-            'Karli Stichter': [
-                {
-                    id: 0,
-                    title: 'Read Scriptures',
-                    beginDate: '',
-                    endDate: moment("4/11/21 8:00:00"),
-                    partner: 'Cara Johnson',
-                    frequency: '',
-                    reminderTime: '',
-                    rewardMessage: '',
-                    rewardType: 0,
-                    rewardRecognizeLeft: 4,
-                    completed: false,
-                    confirmed: false
-                },
-                {
-                    id: 1,
-                    title: 'Do Taxes',
-                    endDate: moment(),
-                    completed: true,
-                    confirmed: false,
-                    partner: 'Cara Johnson'
-                },
+            'Pippen Pipchipiams': [
                 {
                     id: 2,
-                    title: 'Read Scriptures',
+                    title: 'Chase the feather toy',
                     endDate: moment(),
                     completed: false,
                     confirmed: false,
@@ -276,7 +276,7 @@ export default {
                 },
                 {
                     id: 3,
-                    title: 'Read Scriptures',
+                    title: 'Procure fresh kill',
                     endDate: moment("4/9/21 8:00:00"),
                     completed: false,
                     confirmed: false,
