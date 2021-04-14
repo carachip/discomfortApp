@@ -16,7 +16,7 @@ export default {
             },
             stopProp(event) { event.stopPropagation() }
         }
-    },
+    }, 
     data: function() {
         const todos = [
             {
